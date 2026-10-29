@@ -1,0 +1,41 @@
+@tailwind base; @tailwind components; @tailwind utilities;
+:root{
+  --bg:#eceaff; --surface:#f7f6ff; --card:#ffffff; --ink:#1e2447; --soft:#5b628a;
+  --primary:#5b4fd9; --light-sh:rgba(255,255,255,.95); --dark-sh:rgba(110,100,180,.28);
+  color-scheme: light;
+}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Nunito,system-ui,sans-serif;
+  background-image:radial-gradient(circle at 12% 8%,#f6e9ff 0,transparent 32%),radial-gradient(circle at 92% 18%,#d9ecff 0,transparent 30%);background-attachment:fixed;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden}
+*:focus-visible{outline:3px solid #2fb98c;outline-offset:2px;border-radius:12px}
+@layer components{
+  .clay{background:var(--card);border-radius:28px;box-shadow:10px 12px 26px var(--dark-sh),-8px -8px 20px var(--light-sh),inset -4px -4px 10px rgba(120,110,200,.10),inset 4px 4px 10px rgba(255,255,255,.9)}
+  .clay-sm{background:var(--card);border-radius:18px;box-shadow:6px 7px 16px var(--dark-sh),-5px -5px 12px var(--light-sh),inset -2px -2px 6px rgba(120,110,200,.08),inset 2px 2px 6px rgba(255,255,255,.9)}
+  .clay-tint{background:var(--surface);border-radius:22px;box-shadow:inset 4px 4px 10px rgba(120,110,200,.14),inset -4px -4px 10px rgba(255,255,255,.9)}
+  .clay-inset{background:#f1effd;border-radius:999px;box-shadow:inset 5px 5px 11px rgba(110,100,180,.25),inset -5px -5px 10px rgba(255,255,255,.95)}
+  .clay-field{background:#f1effd;border-radius:18px;box-shadow:inset 4px 4px 9px rgba(110,100,180,.22),inset -4px -4px 9px rgba(255,255,255,.95);border:2px solid transparent;color:var(--ink);width:100%;padding:.65rem .9rem;font-weight:600;transition:border-color .15s}
+  .clay-field:focus{outline:none;border-color:#5b4fd9}
+  .clay-btn{display:inline-flex;align-items:center;justify-content:center;gap:.45rem;font-weight:800;border-radius:999px;padding:.6rem 1.1rem;background:#fff;color:var(--ink);cursor:pointer;
+    box-shadow:5px 6px 13px var(--dark-sh),-4px -4px 10px var(--light-sh),inset -2px -2px 5px rgba(120,110,200,.12),inset 2px 2px 5px rgba(255,255,255,.9);transition:transform .15s,box-shadow .15s;white-space:nowrap}
+  .clay-btn:hover{transform:translateY(-2px)}
+  .clay-btn:active{transform:translateY(1px);box-shadow:inset 3px 3px 8px rgba(110,100,180,.3),inset -3px -3px 8px rgba(255,255,255,.9)}
+  .clay-btn:disabled{opacity:.55;cursor:not-allowed;transform:none}
+  .clay-primary{background:linear-gradient(145deg,#6b5ff0,#4f43cf);color:#fff;box-shadow:5px 7px 15px rgba(79,67,207,.45),-3px -3px 9px var(--light-sh),inset -3px -3px 6px rgba(40,30,140,.35),inset 3px 3px 6px rgba(160,150,255,.5)}
+  .clay-mint{background:linear-gradient(145deg,#46d3a3,#25a97e);color:#073d2b;box-shadow:5px 7px 15px rgba(37,169,126,.4),-3px -3px 9px var(--light-sh),inset -3px -3px 6px rgba(10,90,60,.25),inset 3px 3px 6px rgba(190,255,230,.6)}
+  .clay-danger{background:linear-gradient(145deg,#ff7a8a,#e5485f);color:#fff;box-shadow:5px 7px 15px rgba(229,72,95,.4),-3px -3px 9px var(--light-sh),inset -3px -3px 6px rgba(120,10,30,.3),inset 3px 3px 6px rgba(255,190,200,.5)}
+  .clay-icon{width:2.6rem;height:2.6rem;padding:0;border-radius:16px}
+  .chip{display:inline-flex;align-items:center;gap:.25rem;border-radius:999px;font-size:.72rem;font-weight:800;padding:.2rem .65rem;background:#ece9ff;color:#4a3fc0}
+  .btn-sm{padding:.4rem .8rem;font-size:.82rem}
+  .label{font-size:.82rem;font-weight:800;color:var(--soft);margin-bottom:.3rem;display:block}
+}
+.code-font{font-family:'JetBrains Mono',ui-monospace,Consolas,monospace;font-size:13px;line-height:1.6;tab-size:4}
+.tok-kw{color:#7c3aed;font-weight:600}.tok-bi{color:#0e7490}.tok-str{color:#15803d}.tok-num{color:#c2410c}
+.tok-cm{color:#6b7280;font-style:italic}.tok-fn{color:#1d4ed8}.tok-dec{color:#b45309}
+.codebox{background:#fbfaff;border-radius:20px;box-shadow:inset 4px 4px 10px rgba(110,100,180,.16),inset -4px -4px 10px rgba(255,255,255,.95)}
+.unit-1{--u:#6d5df0;--ub:#e7e3ff}.unit-2{--u:#1d8fe0;--ub:#dcefff}.unit-3{--u:#1fae83;--ub:#d9f7ec}.unit-4{--u:#e0801f;--ub:#ffecd6}.unit-5{--u:#d9467f;--ub:#ffe0ee}
+.unit-badge{background:var(--ub);color:var(--u);font-weight:800}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
+@keyframes pop{from{opacity:0;transform:translateY(8px) scale(.98)}to{opacity:1;transform:none}}
+.pop{animation:pop .18s ease-out}
+@keyframes spin{to{transform:rotate(360deg)}} .spin{animation:spin 1s linear infinite}
